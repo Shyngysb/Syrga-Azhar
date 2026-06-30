@@ -1,3 +1,6 @@
+
+// ================= TIMER =================
+
 const eventDate = new Date("September 20, 2026 17:00:00").getTime();
 
 function updateTimer() {
@@ -19,7 +22,8 @@ function updateTimer() {
 updateTimer();
 setInterval(updateTimer, 1000);
 
-// ===== SCROLL ANIMATION =====
+
+// ================= SCROLL ANIMATION =================
 
 const sections = document.querySelectorAll("section");
 
@@ -39,6 +43,11 @@ sections.forEach(section => {
 });
 
 
+// ================= RSVP (GOOGLE SHEETS) =================
+
+// 👉 ВСТАВЬ СЮДА СВОЙ GOOGLE SCRIPT URL
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxsQE5O41cOirpCFWAfSJ_qjYfXLd8EVSkV_KRMVlNyXb_O9tDx6l9cWwnbtMb0uizozQ/exec";
+
 const form = document.getElementById("rsvpForm");
 const message = document.getElementById("rsvpMessage");
 
@@ -49,24 +58,27 @@ if (form) {
         const name = document.getElementById("name").value;
         const attendance = document.getElementById("attendance").value;
 
-        await fetch(SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        name,
-        attendance
-    })
-});
+        try {
+            await fetch(SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                body: JSON.stringify({
+                    name: name,
+                    attendance: attendance
+                })
+            });
 
-        if (attendance === "yes") {
-            message.textContent = `Рахмет, ${name}! Сізді күтеміз 💛`;
-        } else {
-            message.textContent = `Рахмет, ${name}! Жауабыңыз қабылданды`;
+            if (attendance === "yes") {
+                message.textContent = `Рахмет, ${name}! Сізді күтеміз 💛`;
+            } else {
+                message.textContent = `Рахмет, ${name}! Жауабыңыз қабылданды`;
+            }
+
+            form.reset();
+
+        } catch (error) {
+            message.textContent = "Қате болды. Кейінірек қайталап көріңіз.";
+            console.log(error);
         }
-
-        form.reset();
     });
 }
