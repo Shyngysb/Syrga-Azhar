@@ -38,33 +38,34 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
+
 const form = document.getElementById("rsvpForm");
 const message = document.getElementById("rsvpMessage");
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxsQE5O41cOirpCFWAfSJ_qjYfXLd8EVSkV_KRMVlNyXb_O9tDx6l9cWwnbtMb0uizozQ/exec"; // 👈 вставь сюда
+if (form) {
+    form.addEventListener("submit", async function(e) {
+        e.preventDefault();
 
-form.addEventListener("submit", async function(e) {
-    e.preventDefault();
+        const name = document.getElementById("name").value;
+        const attendance = document.getElementById("attendance").value;
 
-    const name = document.getElementById("name").value;
-    const attendance = document.getElementById("attendance").value;
-    
-    await fetch(SCRIPT_URL, {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        name: name,
-        attendance: attendance
-    })
-});
+        await fetch(SCRIPT_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name,
+                attendance
+            })
+        });
 
-    if (attendance === "yes") {
-        message.textContent = `Рахмет, ${name}! Сізді күтеміз 💛`;
-    } else {
-        message.textContent = `Рахмет, ${name}! Жауабыңыз қабылданды`;
-    }
+        if (attendance === "yes") {
+            message.textContent = `Рахмет, ${name}! Сізді күтеміз 💛`;
+        } else {
+            message.textContent = `Рахмет, ${name}! Жауабыңыз қабылданды`;
+        }
 
-    form.reset();
-});
+        form.reset();
+    });
+}
