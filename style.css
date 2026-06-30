@@ -420,3 +420,83 @@ DATE
     }
 
 }
+
+/*=====================================
+LOCATION
+=====================================*/
+
+.location{
+
+    background:#faf8f3;
+
+    padding:120px 0;
+
+    text-align:center;
+
+}
+
+.location h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:56px;
+
+    margin:20px 0;
+
+    color:#5d4635;
+
+}
+
+.location-address{
+
+    font-size:20px;
+
+    color:#7a6655;
+
+    margin-bottom:45px;
+
+    line-height:1.8;
+
+}
+
+.location-button{
+
+    display:inline-block;
+
+    padding:18px 45px;
+
+    background:#c9a76a;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    transition:.3s;
+
+}
+
+.location-button:hover{
+
+    transform:translateY(-3px);
+
+    background:#b89453;
+
+}
+
+@media(max-width:768px){
+
+.location h2{
+
+    font-size:40px;
+
+}
+
+.location-address{
+
+    font-size:17px;
+
+}
+
+}
