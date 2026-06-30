@@ -48,14 +48,17 @@ form.addEventListener("submit", async function(e) {
 
     const name = document.getElementById("name").value;
     const attendance = document.getElementById("attendance").value;
-
+    
     await fetch(SCRIPT_URL, {
-        method: "POST",
-        body: JSON.stringify({
-            name: name,
-            attendance: attendance
-        })
-    });
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name: name,
+        attendance: attendance
+    })
+});
 
     if (attendance === "yes") {
         message.textContent = `Рахмет, ${name}! Сізді күтеміз 💛`;
