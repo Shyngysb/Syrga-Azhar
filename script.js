@@ -37,3 +37,21 @@ sections.forEach(section => {
     section.classList.add("hidden");
     observer.observe(section);
 });
+
+const form = document.getElementById("rsvpForm");
+const message = document.getElementById("rsvpMessage");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const attendance = document.getElementById("attendance").value;
+
+    if (attendance === "yes") {
+        message.textContent = `Рахмет, ${name}! Сізді күтеміз 💛`;
+    } else {
+        message.textContent = `Рахмет, ${name}! Өкінішке қарай көрісе алмаймыз 😔`;
+    }
+
+    form.reset();
+});
