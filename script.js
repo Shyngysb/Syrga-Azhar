@@ -41,16 +41,26 @@ sections.forEach(section => {
 const form = document.getElementById("rsvpForm");
 const message = document.getElementById("rsvpMessage");
 
-form.addEventListener("submit", function(e) {
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxsQE5O41cOirpCFWAfSJ_qjYfXLd8EVSkV_KRMVlNyXb_O9tDx6l9cWwnbtMb0uizozQ/exec"; // 👈 вставь сюда
+
+form.addEventListener("submit", async function(e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value;
     const attendance = document.getElementById("attendance").value;
 
+    await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({
+            name: name,
+            attendance: attendance
+        })
+    });
+
     if (attendance === "yes") {
         message.textContent = `Рахмет, ${name}! Сізді күтеміз 💛`;
     } else {
-        message.textContent = `Рахмет, ${name}! Өкінішке қарай көрісе алмаймыз 😔`;
+        message.textContent = `Рахмет, ${name}! Жауабыңыз қабылданды`;
     }
 
     form.reset();
