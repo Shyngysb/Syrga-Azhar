@@ -785,3 +785,32 @@ DRESS CODE
 html {
     scroll-behavior: smooth;
 }
+
+.hero-content {
+    animation: fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    background-size: cover;
+    animation: zoomBg 10s ease-in-out infinite alternate;
+}
+
+@keyframes zoomBg {
+    from {
+        background-size: 100%;
+    }
+    to {
+        background-size: 110%;
+    }
+}
