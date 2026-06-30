@@ -177,3 +177,174 @@ MOBILE
 }
 
 }
+/*=========================================
+CONTAINER
+=========================================*/
+
+.container{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+/*=========================================
+INVITATION
+=========================================*/
+
+.invitation{
+
+    position:relative;
+
+    background:#faf8f3;
+
+    padding:120px 0;
+
+}
+
+.section-subtitle{
+
+    color:#b89558;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:14px;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.invitation h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:54px;
+
+    color:#5b4535;
+
+    text-align:center;
+
+    line-height:1.25;
+
+    margin-bottom:45px;
+
+}
+
+.invitation-text{
+
+    max-width:760px;
+
+    margin:0 auto 30px;
+
+    text-align:center;
+
+    line-height:2;
+
+    font-size:19px;
+
+    color:#6b5645;
+
+}
+
+.invitation strong{
+
+    color:#b89558;
+
+    font-weight:600;
+
+}
+
+/*=========================================
+ORNAMENT
+=========================================*/
+
+.ornament{
+
+    width:90px;
+
+    height:4px;
+
+    background:#c9a76a;
+
+    margin:0 auto 40px;
+
+    border-radius:20px;
+
+    position:relative;
+
+}
+
+.ornament::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:#c9a76a;
+
+    left:-12px;
+
+    top:-6px;
+
+}
+
+.ornament::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:#c9a76a;
+
+    right:-12px;
+
+    top:-6px;
+
+}
+
+/*=========================================
+MOBILE
+=========================================*/
+
+@media(max-width:768px){
+
+.invitation{
+
+    padding:80px 0;
+
+}
+
+.invitation h2{
+
+    font-size:38px;
+
+}
+
+.invitation-text{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+}
