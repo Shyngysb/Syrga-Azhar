@@ -50,15 +50,16 @@ if (form) {
         const attendance = document.getElementById("attendance").value;
 
         await fetch(SCRIPT_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name,
-                attendance
-            })
-        });
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name,
+        attendance
+    })
+});
 
         if (attendance === "yes") {
             message.textContent = `Рахмет, ${name}! Сізді күтеміз 💛`;
