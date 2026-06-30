@@ -348,3 +348,75 @@ MOBILE
 }
 
 }
+
+/* ==========================
+DATE
+========================== */
+
+.date-section{
+    padding:120px 0;
+    background:#fffdf8;
+    text-align:center;
+}
+
+.date-section h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:64px;
+    color:#b89558;
+    margin:20px 0;
+}
+
+.date-day{
+    font-size:22px;
+    color:#6b5645;
+    margin-bottom:60px;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.time-box{
+    width:140px;
+    height:140px;
+    background:white;
+    border-radius:24px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.time-box span{
+    font-size:48px;
+    font-weight:600;
+    color:#b89558;
+}
+
+.time-box small{
+    margin-top:10px;
+    color:#7a6a5c;
+    letter-spacing:1px;
+}
+
+@media (max-width:768px){
+
+    .date-section h2{
+        font-size:42px;
+    }
+
+    .time-box{
+        width:120px;
+        height:120px;
+    }
+
+    .time-box span{
+        font-size:36px;
+    }
+
+}
