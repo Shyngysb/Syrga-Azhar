@@ -654,3 +654,117 @@ PROGRAM
 }
 
 }
+
+/*=====================================
+DRESS CODE
+=====================================*/
+
+.dress-code{
+
+    padding:120px 0;
+
+    background:#faf8f3;
+
+    text-align:center;
+
+}
+
+.dress-text{
+
+    max-width:700px;
+
+    margin:0 auto 60px;
+
+    line-height:1.9;
+
+    color:#6b5645;
+
+    font-size:18px;
+
+}
+
+.color-palette{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:35px;
+
+}
+
+.color-item{
+
+    text-align:center;
+
+}
+
+.color-circle{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    margin-bottom:15px;
+
+    border:3px solid white;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.color-circle:hover{
+
+    transform:scale(1.12);
+
+}
+
+.beige{
+    background:#DCC9A6;
+}
+
+.ivory{
+    background:#F6F2E9;
+}
+
+.champagne{
+    background:#E7D3A8;
+}
+
+.olive{
+    background:#A59C6A;
+}
+
+.brown{
+    background:#7A5C47;
+}
+
+.color-item span{
+
+    display:block;
+
+    color:#5d4635;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+@media(max-width:768px){
+
+    .color-circle{
+
+        width:75px;
+
+        height:75px;
+
+    }
+
+}
