@@ -1,0 +1,9 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Montserrat,sans-serif;background:#faf8f3;color:#4b3a2f}
+.hero{height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),#bfa57a;color:#fff;position:relative}
+.overlay{position:absolute;inset:0}
+.content{position:relative;z-index:1}
+h1{font-family:'Cormorant Garamond',serif;font-size:5rem}
+h1 span{color:#d4af37}
+a{display:inline-block;margin-top:30px;padding:14px 30px;border:2px solid #d4af37;color:#fff;text-decoration:none;border-radius:30px}
+section{padding:80px 20px}.container{max-width:900px;margin:auto;text-align:center}
